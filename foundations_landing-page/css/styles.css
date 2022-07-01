@@ -43,18 +43,16 @@ a { text-decoration: none; }
 a:hover { font-weight: var(--fw-bold); }
 
 button {
-	background: var(--clr-dark);
-	color: var(--clr-light);
 	border: .25em solid var(--clr-light);
 	border-radius: .75em;
 	font-size: var(--fs-body);
-	font-weight: var(--fw-bold);;
+	font-weight: var(--fw-bold);
+	background: var(--clr-light);
 	padding: 1em;
 }
-
 button:hover {
-	background: var(--clr-light);
-	color: var(--clr-dark);
+	background: transparent;
+	color: var(--clr-light);
 }
 
 
@@ -116,16 +114,17 @@ button:hover {
 	display: flex;
 	flex-wrap: wrap;
 	align-self: center;
+	gap: 4em;
 }
 .intro__flex-item {
-	flex: 1 1 0;
-	margin-right: 3em;
+	flex: 1 0 0;
 }
 .intro__subtitle {
 	margin-top: 0.5em;
 }
 .intro__button {
 	margin-top: 1.5em;
+	color: var(--clr-dark);	
 }
 
 .placeholder {
@@ -183,8 +182,22 @@ button:hover {
 
 
 /* Call-to-action section */
+.cta {
+	background: var(--clr-accent2);
+	border-radius: .75em;
+	margin: 6em auto;
+	padding: 4em;
+	display: flex;
+	justify-content: space-between;
+	gap: 4em;
 
-
+}
+.cta__flex-item {
+	color: var(--clr-light);
+}
+.cta__button {
+	color: var(--clr-accent2);
+}
 
 
 /* Footer */
