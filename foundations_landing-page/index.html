@@ -10,66 +10,76 @@
 	<title>Landing Page</title>
 </head>
 <body>
-	<header>
-		<nav class="main-nav">
-			<p class="main-nav__logo">Company Logo</p>
-			<ul class="main-nav__list">
-				<li class="main-nav__item"><a class="main-nav__link" href="#">Link one</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" href="#">Link two</a></li>
-				<li class="main-nav__item"><a class="main-nav__link" href="#">Link three</a></li>
-			</ul>
-		</nav>
+	<header class="section section--dark">
+		<div class="section__container">
+			<nav class="main-nav">
+				<p class="main-nav__logo">Company Logo</p>
+				<ul class="main-nav__list">
+					<li class="main-nav__item"><a class="main-nav__link" href="#">Link one</a></li>
+					<li class="main-nav__item"><a class="main-nav__link" href="#">Link two</a></li>
+					<li class="main-nav__item"><a class="main-nav__link" href="#">Link three</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	<main>
-		<section class="section section--dark">
-			<div class="flex-container">
-				<h1>Welcome to The Business.</h1>
-				<p>This is some subtext describing the business.</p>
-				<button class="btn btn--blue">Get in touch today</button>
-				<img class="placeholder">
+		<section class="section section--dark intro">
+			<div class="section__container intro__flex-container">
+				<div class="intro__flex-item">
+					<h1 class>Welcome to The Business.</h1>
+					<p class="intro__subtitle">This is some subtext describing the business.</p>
+					<button class="intro__button">Get in touch today</button>
+				</div>
+					<img src="" alt="This is a placeholder for an image" class="placeholder">
 			</div>
 		</section>
 
-		<section class="section section--light">
-			<h2 class="section__heading">Some random information.</h2>
-			<ul class="cards">
-				<li class="cards__card">
-					<img src="" alt="" class="cards__img">
-					<p class="cards__desc">this is some subtext under an illustration or image</p>
-				</li>
-				<li class="cards__card">
-					<img src="" alt="" class="cards__img">
-					<p class="cards__desc">this is some subtext under an illustration or image</p>
-				</li>
-				<li class="cards__card">
-					<img src="" alt="" class="cards__img">
-					<p class="cards__desc">this is some subtext under an illustration or image</p>
-				</li>
-				<li class="cards__card">
-					<img src="" alt="" class="cards__img">
-					<p class="cards__desc">this is some subtext under an illustration or image</p>
-				</li>
-			</ul>
+		<section class="section section--light info">
+			<div class="section__container">
+				<h2 class="info__heading">Some random information.</h2>
+				<ul class="info__cards">
+					<li class="card">
+						<img src="" alt="" class="card__img">
+						<p class="card__desc">this is some subtext under an illustration or image</p>
+					</li>
+					<li class="card">
+						<img src="" alt="" class="card__img">
+						<p class="card__desc">this is some subtext under an illustration or image</p>
+					</li>
+					<li class="card">
+						<img src="" alt="" class="card__img">
+						<p class="card__desc">this is some subtext under an illustration or image</p>
+					</li>
+					<li class="card">
+						<img src="" alt="" class="card__img">
+						<p class="card__desc">this is some subtext under an illustration or image</p>
+					</li>
+				</ul>
+			</div>
 		</section>
 
-		<section class="section section--accent">
-			<figure class="quote">
-				<blockquote class="quote__text">This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.</blockquote>
-				<figcaption class="quote__author">- Me, 2022</figcaption>
-			</figure>
+		<section class="section section--accent quote">
+			<div class="section__container">
+				<figure class="quote__figure">
+					<blockquote class="quote__text">This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.</blockquote>
+					<figcaption class="quote__author">- Me, 2022</figcaption>
+				</figure>
+			</div>
 		</section>
-		<section class="section section--light">
-			<div class="cta">
-				<div class="flex-item">
+		<section class="section section--light cta">
+			<div class="section__container">
+				<div class="cta__container">
 					<h3 class="cta__title">Call to action! It's time!</h3>
 					<p class="cta__desc">Sign up for the product by clicking the button!</p>
 				</div>
-				<button class="btn">Contact us now</button>
+				<button>Contact us now</button>
 			</div>
 		</section>
 	</main>
-	<footer>
-		<p class="copyright">Copyright 2022 The Odin Project</p>
+	<footer class="section section--dark">
+		<div class="main-content">
+			<p class="footer-text">Made by Frederik Kehlet as a part of The Odin Project</p>
+		</div>
 	</footer>
 </body>
 </html>

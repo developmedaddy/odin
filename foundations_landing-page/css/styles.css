@@ -28,6 +28,7 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+
 }
 
 h1, h2, h3 {
@@ -37,22 +38,36 @@ h1, h2, h3 {
 h1 { font-size: var(--fs-h1); }
 h2 { font-size: var(--fs-h2); }
 h3 { font-size: var(--fs-h3); }
+a { text-decoration: none; }
+a:hover { font-weight: var(--fw-bold); }
 
-header, section, footer {
-	padding: 0 100px;
+.section {
+
 }
-
-header {
-	box-sizing: content-box;
-	height: 80px;
+.section--light {
+	background: var(--clr-light);
+	color: var(--clr-dark);
+}
+.section--dark {
 	background: var(--clr-dark);
 	color: var(--clr-light);
 }
+.section--accent {
+	background: var(--clr-accent1);
+	color: var(--clr-dark);
+}
+
+.section__container {
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 5em;
+}
+
 .main-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
+	padding: 1rem 0;
 }
 .main-nav__logo {
 	font-size: var(--fs-h3);
@@ -61,27 +76,80 @@ header {
 .main-nav__list {
 	display: flex;
 	list-style-type: none;
-	gap: 1em;
+	flex-wrap: wrap;
 }
 .main-nav__item {
-	padding: 0.5em;
 	flex: 0 0 auto;
+	width: 8em;
+	text-align: center;
 }
 .main-nav__link {
+	padding: 1em;
 	color: var(--clr-light);
-	text-decoration: none;
-}
-.main-nav__link:hover {
-	text-decoration: underline;
 }
 
-.section--dark {
-	background: var(--clr-dark);
+
+.intro__flex-container {
+	padding-top: 4em;
+	padding-bottom: 4em;
+	display: flex;
+	flex-wrap: wrap;
+	align-self: center;
 }
+.intro__flex-item {
+	flex: 1 1 0;
+	margin-right: 3em;
+}
+.intro__subtitle {
+	margin-top: 0.5em;
+}
+.intro__button {
+	margin-top: 1.5em;
+}
+
+.placeholder {
+	flex: 1 0 0;
+	padding: 2em;
+	background: dimgray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+
+
+
+
+
+footer {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 button {
-	background: none;
-	border: ;
-	border-radius: 3px;
+	background: var(--clr-dark);
 	color: var(--clr-light);
+	border: 2px solid var(--clr-light);
+	border-radius: 0.75em;
+	font-size: var(--fs-body);
+	font-weight: var(--fw-bold);;
+	padding: 1em;
+}
+
+button:hover {
+	background: var(--clr-light);
+	color: var(--clr-dark);
 }
