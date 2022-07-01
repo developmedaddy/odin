@@ -1,0 +1,27 @@
+/* Border-box everything for easier styles */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Declare colors, font families, font sizes, font weights */
+:root {
+	--clr-l: #F9FAF8;
+	--clr-d: #1F2937;
+	--clr-a1: #E5E7EB;
+
+	--ff-primary: roboto, sans-serif;
+
+	--fs-h1: 3rem;
+	--fs-h2: 2rem;
+	--fs-h3: 1.5rem;
+	--fs-body: 1rem;
+
+	--fw-light: 300;
+	--fw-reg: 500;
+	--fw-bold: 900;
+}
+
+h1 {
+	font-size: var(--fs-h1);
+	font-family: var(--ff-primary);
+}
