@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <title>Sketch!</title>
+</head>
+<body>
+  <main class="panel">
+    <header class="header">
+      <h1>SKETCH!</h1>
+      <p>Click and drag to draw</p>
+    </header>
+    <!-- Grid system-->
+    <div class="container" draggable="false">
+      <div class="sketch-grid js-sketch" draggable="false"></div>
+    </div>
+
+    <footer>
+      <h2>Rainbow Mode</h2>
+      <label class="switch">
+
+        <input class="switch__input" type="checkbox">
+        <span class="switch__slider"></span>
+      </label>
+    </footer>
+  </main>
+</body>
+</html>
