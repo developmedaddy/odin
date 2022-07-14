@@ -1,16 +1,42 @@
 let choices = ['rock', 'paper', 'scissors'];
 let buttons = document.querySelectorAll('.js-btn');
-let winnerText = document.querySelector('.js-winner');
+let roundNumber = document.querySelector('.js-game');
+
+let roundCounter = 1;
+
+// Keeps track of sins
+let winCount = {
+    'player': 0,
+    'computer': 0
+};
+
+
+updateRoundCount(roundCounter);
 
 // Add event handler for each button
-buttons.forEach(button => button.addEventListener('click', playGame));
+buttons.forEach(button => button.addEventListener('click', playRound));
 
 
-function playGame(e) {
-  // Gets the button title
+
+
+
+function playRound(e) {
+  // Sets the choice string to the button title
   let playerChoice = e.target.previousElementSibling.textContent.toLowerCase();
   let winner = findWinner(playerChoice, computerChoose());
-  winnerText.innerText = winner;
+
+  winCount[`${winner}`]++;
+    // Updates text on screen with wins
+  let roundWinnerText = document.querySelector(`.js-${winner}`);
+  roundWinnerText.innerText = `${winner}: ${winCount[`${winner}`]}/5`;
+
+  if (winCount[`${winner}`] < 5) {
+  roundCounter++;
+  updateRoundCount(roundCounter);
+  }
+  else {
+    endGame(winner);
+  }
 }
 
 
@@ -29,9 +55,17 @@ function findWinner(playerSelection, computerSelection) {
     winner = 'player';
   }
   else {
-    winner = 'computer'
+    winner = 'computer';
   }
   return winner;
 }
 
-//function game(n) { for (let i = 1; i <= n; i++) { alert(`The winner of round ${i}/${n} is: ${playRound(playerPlay(), computerPlay())}`); } }
+
+function updateRoundCount(count) {
+  roundNumber.textContent = `Game #${count}`;
+}
+
+function endGame(winner) {
+  document.querySelector('.js-winner').innerText = `${winner.toUpperCase()} wins!`;
+  buttons.forEach(button => button.removeEventListener('click', playRound));
+}
