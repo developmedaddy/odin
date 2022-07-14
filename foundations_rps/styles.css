@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: MonoLisa, sans-serif;
+}
+
+.btn {
+  padding: 1em;
+  border: 3px solid black;
+  background: #94A89A;
+}
+  .btn:hover {
+    background: black;
+  }
+
+
+.flex-container {
+  display: flex;
+  gap: 2em;
+}

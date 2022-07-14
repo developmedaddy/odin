@@ -3,12 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="main.js"></script>
-  <link rel="styesheet" href="styles.css">
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" href="styles.css">
   <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-  <h1>Game</h1>
-
+  <h1 class="js-game-count">Game #1</h1>
+  <div class="flex-container">
+    <div class="flex-container__item">
+      <h2>Rock</h2>
+      <button class="btn js-btn"></button>
+    </div>
+    <div class="flex-container__item">
+      <h2>Paper</h2>
+      <button class="btn js-btn"></button>
+    </div>
+        <div class="flex-container__item">
+      <h2>Scissors</h2>
+      <button class="btn js-btn"></button>
+    </div>
+  </div>
+  <h2>The winner is:</h2>
+  <p class="js-winner"></p>
 </body>
 </html>
