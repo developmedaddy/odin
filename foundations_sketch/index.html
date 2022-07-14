@@ -9,23 +9,39 @@
 </head>
 <body>
   <main class="panel">
+
+    <!-- Introduction -->
     <header class="header">
       <h1 class="title">SKETCH!</h1>
-      <p>Click and drag to draw</p>
+      <p>Click and drag to draw.<br>Refresh to clear.</p>
+      <hr>
     </header>
-    <!-- Grid system-->
-    <div class="container" draggable="false">
+
+    <!-- Grid system -->
+    <div class="container sketch-container" draggable="false">
       <div class="sketch-grid js-sketch" draggable="false"></div>
     </div>
 
-    <footer>
-      <h2>Rainbow?</h2>
-      <label class="switch">
-
-        <input class="switch__input js-rainbow" type="checkbox">
-        <span class="switch__slider"></span>
-      </label>
-    </footer>
+    <!-- Settings -->
+    <div class="container settings">
+      <h2 class="title">Settings</h2>
+      <div class="settings__item">
+        <h3>Fidelity</h3>
+        <div class="fidelity">
+          <p>8x8</p>
+          <input class="fidelity__slider js-fidelity" type="range"
+          min="8" max="64" value="16" id="test">
+          <p>64x64</p>
+        </div>
+      </div>
+      <div class="settings__item">
+        <h3>Rainbow?</h3>
+        <label class="switch">
+          <input class="switch__input js-rainbow" type="checkbox">
+          <span class="switch__slider"></span>
+        </label>
+      </div>
+    </div>
   </main>
 </body>
 </html>

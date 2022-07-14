@@ -21,14 +21,18 @@ html, body {
 body {
   font-family: 'Source Code Pro',sans-serif;
   color: var(--clr-p-dark);
-  background: ;
 }
 
 header {
-  border-bottom: .5em solid var(--clr-n-black);
-  min-height: 5em;
+  margin-top: 2em;
 }
 
+hr {
+  background: var(--clr-n-black);
+  height: .25em;
+  border: none;
+  margin-top: .5em;
+}
 
 .panel {
   margin: auto;
@@ -39,11 +43,13 @@ header {
   font-style: italic;
 }
 
-
 .container {
+  background: var(--clr-n-white);
+  border: .25em solid var(--clr-n-black);
+  box-shadow: 0 0 2em .25em hsl(0, 0%, 0%, 20%);
+}
+.sketch-container {
   margin-top: 2em;
-  border: .25em ridge var(--clr-n-black);
-  box-shadow: 0 0 2em .5em hsl(0, 0%, 0%, 20%);
 }
 
 .sketch-grid {
@@ -59,16 +65,56 @@ header {
 }
 
 
+.settings {
+  padding: 2em;
+  margin-top: 4em;
+}
 
-footer {
+.settings__item {
   margin-top: 2em;
 }
 
+
+.fidelity {
+  margin-top: .5em;
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+/* Hides the slider so that custom slider can be made */
+.fidelity__slider {
+  -webkit-appearance: none; 
+  flex: auto;
+  background: var(--clr-n-white);
+  border: .25em solid var(--clr-n-black);
+  height: 2em;
+}
+
+.fidelity__slider::-moz-range-thumb {
+  border: none;
+  border-radius: 0;
+  height: 2em;
+  width: 2em;
+  background: var(--clr-n-black);
+  cursor: pointer;
+}
+
+.fidelity__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 0;
+  height: 2em;
+  width: 2em;
+  background: var(--clr-n-black);
+  cursor: pointer;
+}
 
 
 /* Rainbow mode switch */
 
 .switch {
+  margin-top: .5em;
   position: relative;
   display: inline-block;
   width: 5em;
