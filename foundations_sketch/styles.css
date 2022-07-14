@@ -25,7 +25,7 @@ body {
 }
 
 header {
-  border-bottom: .25em solid var(--clr-n-black);
+  border-bottom: .5em solid var(--clr-n-black);
   min-height: 5em;
 }
 
@@ -36,15 +36,14 @@ header {
 }
 
 .title {
-  background: var(--clr-p-light);
-  text-align: center;
-  padding: 0.25em 0;
+  font-style: italic;
 }
 
 
 .container {
-  margin-top: .5em;
-  border: .25em dashed var(--clr-n-black);
+  margin-top: 2em;
+  border: .25em ridge var(--clr-n-black);
+  box-shadow: 0 0 2em .5em hsl(0, 0%, 0%, 20%);
 }
 
 .sketch-grid {
@@ -65,11 +64,17 @@ footer {
   margin-top: 2em;
 }
 
+
+
+/* Rainbow mode switch */
+
 .switch {
   position: relative;
   display: inline-block;
-  width: 80px;
-  height: 34px;
+  width: 5em;
+  height: 2em;
+  border: .25em solid var(--clr-n-black);
+  box-sizing: content-box;
 }
 
 .switch__input {
@@ -91,22 +96,23 @@ footer {
 .switch__slider::before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 1.5em;
+  width: 1.5em;
+  left: .25em;
+  bottom: .25em;
   background-color: var(--clr-n-white);
   transition: .1s;
 }
 
 .switch__input:checked + .switch__slider {
-  background: linear-gradient(to right, red, orange, yellow, green, blue, purple);
-}
-
-.switch__input:focus + .switch__slider {
-  box-shadow: 0 0 1px #2196F3;
+  background: linear-gradient(to right, hsl(0, 80%, 75%),
+    hsl( 32, 80%, 75%), hsl( 64, 80%, 75%),
+    hsl( 96, 80%, 75%), hsl(128, 80%, 75%),
+    hsl(160, 80%, 75%), hsl(192, 80%, 75%),
+    hsl(224, 80%, 75%), hsl(256, 80%, 75%))
 }
 
 .switch__input:checked + .switch__slider:before {
-  transform: translateX(46px);
+  transform: translateX(3em);
+  background-color: var(--clr-n-black)
 }
