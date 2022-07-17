@@ -4,13 +4,20 @@ class Calculator {
   constructor(prevOpText, currOpText) {
     this.prevOpText = prevOpText;
     this.currOpText = currOpText;
-    this.clear();
+    this.reset();
+    this.updateDisplay();
   }
 
-  clear() {
+  reset() {
     this.prevOp = '';
     this.currOp = '';
     this.operation = undefined;
+    this.answer = undefined;
+  }
+
+  clear() {
+    this.reset();
+    this.prevOpText.innerText = '';
     this.updateDisplay();
   }
 
@@ -26,9 +33,11 @@ class Calculator {
   }
 
   chooseOp(operation) {
-    
+
     // Do nothing if no number inputted
-    if (this.currOp === '') return;
+    if (this.currOp === '') {
+      return;
+    }
 
     // Compute value of prevOp given the operator
     if (this.prevOp !== '') {
@@ -40,6 +49,7 @@ class Calculator {
     this.prevOp = this.currOp;
     this.currOp = '';
     this.updateDisplay();
+
   }
 
   compute() {
@@ -69,6 +79,11 @@ class Calculator {
 
     // Reset operation
     this.operation = undefined;
+  }
+
+  equate() {
+    this.compute();
+    this.answer = this.currOp;
     this.updateDisplay();
   }
 
@@ -95,12 +110,17 @@ class Calculator {
   }
 
   updateDisplay() {
+    // Check for equals
+    if (this.answer !== undefined) {
+      this.prevOpText.innerText = this.getDisplayNumber(this.answer)
+      this.currOpText.innerText = '';
+      this.reset();
+      return;
+    }
+
     this.currOpText.innerText = this.getDisplayNumber(this.currOp);
     if (this.operation !== undefined) {
       this.prevOpText.innerText = `${this.getDisplayNumber(this.prevOp)} ${this.operation}`;
-    }
-    else {
-      this.prevOpText.innerText = '';
     }
   }
 }
@@ -126,5 +146,5 @@ opButtons.forEach(button => button.addEventListener('click', () =>
 );
 
 clearButton.addEventListener('click', () => calculator.clear());
-equalsButton.addEventListener('click', () => calculator.compute());
+equalsButton.addEventListener('click', () => calculator.equate());
 delButton.addEventListener('click', () => calculator.del());
