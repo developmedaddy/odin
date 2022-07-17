@@ -1,9 +1,9 @@
 
 
 :root {
-  --clr-p:       hsl(180, 49%, 50%);
+  --clr-p:       hsl(180, 19%, 50%);
   --clr-p-dark:  hsl(180, 19%, 20%);
-  --clr-p-light: hsl(180, 49%, 90%);
+  --clr-p-light: hsl(180, 39%, 82%);
 
   --clr-n-900:  hsl(177, 9%, 10%);
   --clr-n-500:  hsl(177, 9%, 50%);
@@ -15,7 +15,7 @@
   --fs-s: 1.5rem;
   --fs-m: 2rem;
   --fs-l: 2.5rem;
-  --fs-xl: 3rem;
+  --fs-xl: 4rem;
 
 }
 
@@ -34,32 +34,34 @@ html, body {
 
 body {
   background: var(--clr-p-dark);
-  color: var(--clr-n-100);
+  color: var(--clr-n-900);
   font-size: var(--fs-b);
+  overflow: hidden;
 }
 
 .wrapper {
-  width: 50ch;
+  width: 60ch;
   margin: 2em auto 0;
 }
 
 .heading {
   font-size: var(--fs-xl);
-  font-weight: 300;
+  font-weight: 700;
+  color: var(--clr-p);
 }
 
 .calc-grid {
-  padding: 1em;
-  max-width: 400px;
-  background: var(--clr-n-100);
+  padding: 2em;
+  max-width: 450px;
+  background: var(--clr-n-900);
   display: grid;
   justify-content: center;
   align-content: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(8em, auto) repeat(5, 1fr);
-  gap: .5em;
+  grid-template-rows: minmax(9em, auto) repeat(5, 1fr);
+  gap: 1.25em;
   border-radius: .5em;
-  margin: 2em auto 0;
+  margin: 1em auto 0;
   box-shadow: 0 1em 3em .25em var(--clr-n-900);
 }
 
@@ -68,18 +70,22 @@ body {
   opacity: 80%;
   background: var(--clr-p-light);
   color: var(--clr-n-900);
-  border: .125em solid var(--clr-n-500);
+  /* border: .125em solid var(--clr-n-500); */
+  border: none;
   border-radius: .125em;
+  box-shadow: 0 .09375em 0em .15625em var(--clr-p);
 }
+
 
 .output {
   grid-column: 1 / -1;
-  padding: .25em;
+  padding: .5em;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-end;
   word-break: break-all;
+  margin-bottom: .5em;
 }
 
 .output__previous {
@@ -93,11 +99,16 @@ body {
 .calc__btn {
   cursor: pointer;
   outline: none;
-  height: 2em;
+  height: 2.25em;
 }
   .calc__btn:hover {
-    background: var(--clr-n-500);
+    /*background: var(--clr-n-500); */
     opacity: 100%;
+  }
+
+  .calc__btn:active {
+    transform: translateY(.0625em);
+    box-shadow: 0 .03125em 0em .15625em var(--clr-p);
   }
 
 .u-span-2 {
